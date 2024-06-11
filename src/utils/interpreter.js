@@ -14,7 +14,7 @@ export const findItem = (vpos, hpos, items) => {
 }
 
 
-export const interpretCommands = (commandType, commandDirection, vpos, hpos, cellsPos, fishesPos, gemsPos, garbagesPos) => {
+export const interpretCommands = (commandType, commandDirection, vpos, hpos, DevicesPos, fishesPos, ServicesPos, garbagesPos) => {
 
     // console.log("============ FISHESPOS IN INTERPRETER >>>> ")
     // console.dir(fishesPos)
@@ -37,16 +37,16 @@ export const interpretCommands = (commandType, commandDirection, vpos, hpos, cel
             if (fishesPos[(vpos + move[0]) * 100 + hpos + move[1].hmove]) {
                 activity = ACTIVITY_FISHING
                 activityName = ACTIVITY_NAMES[ACTIVITY_FISHING]
-            } else if (gemsPos[(vpos + move[0]) * 100 + hpos + move[1]]) {
+            } else if (ServicesPos[(vpos + move[0]) * 100 + hpos + move[1]]) {
                 activity = ACTIVITY_GETING
                 activityName = ACTIVITY_NAMES[ACTIVITY_GETING]
             } else if (garbagesPos[(vpos + move[0]) * 100 + hpos + move[1]]) {
                 activity = ACTIVITY_CLEANING
                 activityName = ACTIVITY_NAMES[ACTIVITY_CLEANING]
-            } else if (cellsPos[(vpos + move[0]) * 100 + hpos + move[1]].type === 0) {
+            } else if (DevicesPos[(vpos + move[0]) * 100 + hpos + move[1]].type === 0) {
                 activity = ACTIVITY_BUILDING
                 activityName = ACTIVITY_NAMES[ACTIVITY_BUILDING]
-            } else if (cellsPos[(vpos + move[0]) * 100 + hpos + move[1]].type > 0) {
+            } else if (DevicesPos[(vpos + move[0]) * 100 + hpos + move[1]].type > 0) {
                 activity = ACTIVITY_MOVING
                 activityName = ACTIVITY_NAMES[ACTIVITY_MOVING]
             }

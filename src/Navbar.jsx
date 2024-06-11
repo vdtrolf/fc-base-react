@@ -14,7 +14,7 @@ import * as constants from "./Constants.jsx";
 
 export default function Navbar(props) {
 
-  const { runningState, island, admin, onStartButton, onOnceButton, onStopButton, onPlusButton, onCloneButton, onAdminButton } = props;
+  const { runningState, environment, admin, onStartButton, onOnceButton, onStopButton, onPlusButton, onCloneButton, onAdminButton } = props;
 
     const [speedoImg,setSpeedoImg] = useState(speedo_1);  
     const [month,setMonth] = useState("Spring");  
@@ -23,23 +23,23 @@ export default function Navbar(props) {
     const monthes = ["Spring","Summer","Autumn","Winter"]
      
     useEffect(() => {
-      setSpeedoImg(speedo[island.evolutionSpeed])
-      setMonth(monthes[Math.floor(island.year * 4) % 4])
-    },[island.evolutionSpeed,island.year])    
+      setSpeedoImg(speedo[environment.evolutionSpeed])
+      setMonth(monthes[Math.floor(environment.year * 4) % 4])
+    },[environment.evolutionSpeed,environment.year])    
 
   return (
     <div className="Navbar">
       <img src={logo} alt="logo" width="180px" height ="48px" />
       <div className="NavbarInfo" >
-         {island.name && <div className="NameArea" key="div7" style={{zIndex:'50', pointerEvents:'none'}}>
-            <div id="islandName">{island.name}</div>
-            <div id="score">{month}.{Math.round(island.year)}</div>
+         {environment.name && <div className="NameArea" key="div7" style={{zIndex:'50', pointerEvents:'none'}}>
+            <div id="environmentName">{environment.name}</div>
+            <div id="score">{month}.{Math.round(environment.year)}</div>
           </div>}
       </div>
       {runningState !== constants.NOT_STARTED && <div className="NavbarTemp" >
         <img key="99999998" src={speedoImg} width="50px" height ="42px" alt="" transition= "0.5s" />
       </div>}
-      {runningState === constants.NOT_STARTED && <div>{island.evolutionSpeed}</div> }
+      {runningState === constants.NOT_STARTED && <div>{environment.evolutionSpeed}</div> }
 
       { runningState !== constants.NOT_STARTED && <div className="ButtonArea">
         {runningState === constants.ENDED &&<div>&nbsp;</div>}

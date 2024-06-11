@@ -3,14 +3,14 @@ import Button from "./Button.jsx";
 
 export default function Sidebar(props) {
 
-  const {admin, sidebar, onCloseButton, onIslandSelect, onIslandDelete, islandsList } = props;
+  const {admin, sidebar, onCloseButton, onEnvironmentSelect, onEnvironmentDelete, environmentsList } = props;
     
-  const [checkedState, setCheckedState] = useState(new Array(islandsList.length).fill(false));
+  const [checkedState, setCheckedState] = useState(new Array(environmentsList.length).fill(false));
   const [selected,setSelected] = useState(false);
   const debug = false;
 
-  const handleIslandClick = (id,size) => {
-    onIslandSelect(id,size);
+  const handleEnvironmentClick = (id,size) => {
+    onEnvironmentSelect(id,size);
   }
 
   const handleGarbClick = (position) => {
@@ -27,33 +27,33 @@ export default function Sidebar(props) {
   }
 
   const handleDelete = () => {
-    var islandsToDelete = [];
+    var environmentsToDelete = [];
     checkedState.forEach((state,index) => {
-      if (state) islandsToDelete.push(islandsList[index].id)
+      if (state) environmentsToDelete.push(environmentsList[index].id)
     })
 
     if (debug) {
-      console.log("=== islands to delete ====");
-      console.dir(islandsToDelete);
+      console.log("=== environments to delete ====");
+      console.dir(environmentsToDelete);
       console.log("=============================================");
     }
 
-    onIslandDelete(islandsToDelete);
-    setCheckedState(new Array(islandsList.length).fill(false))
+    onEnvironmentDelete(environmentsToDelete);
+    setCheckedState(new Array(environmentsList.length).fill(false))
   }
 
   useEffect(() =>{
-    setCheckedState(new Array(islandsList.length).fill(false))
-  },[islandsList.length])
+    setCheckedState(new Array(environmentsList.length).fill(false))
+  },[environmentsList.length])
 
-  if (islandsList) {
+  if (environmentsList) {
 
-    const listIslands = islandsList.map((island, index) => {  
+    const listEnvironments = environmentsList.map((environment, index) => {  
       return (
-        <div key={island.id} className={island.running?"island":"deadisland"}>
+        <div key={environment.id} className={environment.running?"environment":"deadenvironment"}>
           {admin?<input type="checkbox" checked={checkedState[index]} onChange={() => handleGarbClick(index)} />:<div/>}
-          <div onClick={() => handleIslandClick(island.id,island.size)}>{island.name} ({island.size})</div>
-          <div> - {island.running?"":"over"}</div>
+          <div onClick={() => handleEnvironmentClick(environment.id,environment.size)}>{environment.name} ({environment.size})</div>
+          <div> - {environment.running?"":"over"}</div>
         </div>
       )
     });
@@ -62,11 +62,11 @@ export default function Sidebar(props) {
       <div id="mySidebar" className="sidebar" style={{width:sidebar?'250px':'0px',border:sidebar?'4px solid rgb(103, 133, 168)':'0px solid rgb(103, 133, 168)'}}>
         <div className="sideNavbar">
           <div>&nbsp;</div>
-          <div>Islands</div>
+          <div>Environments</div>
           <div><Button className="ButtonClose" onClickHandler={onCloseButton} >&nbsp;</Button></div>
         </div>
-        <div id="islands">
-          <div className="IslandsList">{listIslands}</div>
+        <div id="environments">
+          <div className="EnvironmentsList">{listEnvironments}</div>
         </div>
         <div className="sidebarButtonsBar">
             <div />
@@ -78,7 +78,7 @@ export default function Sidebar(props) {
     return (
       <div id="mySidebar" className="sidebar" style={{width:sidebar?'250px':'0px',border:sidebar?'4px solid rgb(103, 133, 168)':'0px solid rgb(103, 133, 168)'}}>
         <div className="sideNavbar">
-          <div>Islands</div>
+          <div>Environments</div>
           <div><Button className="ButtonClose" onClickHandler={onCloseButton} >&nbsp;</Button></div>
         </div>
       </div>

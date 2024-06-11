@@ -11,9 +11,9 @@ export const BOARDSIZE = 6
 export const PREFIX_ISLAND = 1
 export const PREFIX_PENGUIN = 2
 export const PREFIX_FISH = 3
-export const PREFIX_GEM = 4
+export const PREFIX_Service = 4
 export const PREFIX_GARBAGE = 5
-export const PREFIX_CELL = 6
+export const PREFIX_Device = 6
 
 export const NAME_TYPE_PERSON = 1
 export const NAME_TYPE_ISLAND = 9

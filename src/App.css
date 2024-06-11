@@ -113,7 +113,7 @@ code {
   height: 640px;
 }
 
-.GemArea {
+.ServiceArea {
   position: absolute;
   /* Stay on top */
   left: 16px;
@@ -143,11 +143,11 @@ code {
   position: absolute;
 }
 
-.Gem {
+.Service {
   position: absolute;
 }
 
-.Cell {
+.Device {
   left: 0px;
   top: 0px;
   width : 64 px;
@@ -514,7 +514,7 @@ label {
   grid-template-rows: auto;
 }
 
-#islandName {
+#environmentName {
   text-align: left;
   z-index: 50;
   font-family: Helvetica;
@@ -679,7 +679,7 @@ label {
   grid-template-rows: 52px 510px 28px;
 }
 
-.IslandsList {
+.EnvironmentsList {
   margin: 0px 8px;
   font-family: Helvetica;
   font-size: 16px;
@@ -690,21 +690,21 @@ label {
   grid-template-rows: 24px 24px 24px 24px 24px 24px 24px 24px 24px 24px 24px 24px;
 }
 
-.island {
+.environment {
   color: #d0f5a9;
   display: grid;
   grid-template-columns: 20px 136px 42px 42px;
   grid-template-rows: auto;
 }
 
-.deadisland {
+.deadenvironment {
   color: #f3f2f088;
   display: grid;
   grid-template-columns: 20px 136px 42px 42px;
   grid-template-rows: auto;
 }
 
-.island:hover {
+.environment:hover {
   font-weight: bold;
   color: #ddba73;
 } 

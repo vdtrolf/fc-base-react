@@ -45,9 +45,9 @@ export default function Details(props) {
   
   let image = peng_m;
   
-  if (penguinObj.hasGem && penguinObj.hasFish) {
+  if (penguinObj.hasService && penguinObj.hasFish) {
     image = penguinObj.gender ==="m"? peng_m_ice_fish : peng_f_ice_fish;    
-  } else if (penguinObj.hasGem) {
+  } else if (penguinObj.hasService) {
     image = penguinObj.gender ==="m"? peng_m_ice : peng_f_ice;    
   } else if (penguinObj.hasFish) {
     image = penguinObj.gender ==="m"? peng_m_fish : peng_f_fish;    
@@ -72,7 +72,7 @@ export default function Details(props) {
             <div className="detailsList" >
               <div className="detailsBar"><div>Hunger: </div><img src={hungerImg} width="100px" height="20px" alt="" /></div>
               <div className="detailsBar"><div>Temperature: </div><img src={tempImg} width="100px" height="20px" alt=""/></div>
-              <div className="detailsBar"><div>Blocks: </div>{penguinObj.hasGem && <img src={ice} width="40px" height="20px" alt=""/>}</div>
+              <div className="detailsBar"><div>Blocks: </div>{penguinObj.hasService && <img src={ice} width="40px" height="20px" alt=""/>}</div>
             </div>
           </div>
           <div className="detailsGridBack" >
