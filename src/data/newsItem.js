@@ -2,7 +2,7 @@ import { FISH_LETARGY } from "../utils/constants";
 import { randomDirection } from "../utils/helpers"
 
 // Class Implementation
-export default class News {
+export default class NewsItem {
     constructor(
         id,
         key,
@@ -12,6 +12,7 @@ export default class News {
         author,
         topic,
         refURL,
+        domain,
         isActive) {
             this.id = id
             this.key = key
@@ -21,6 +22,7 @@ export default class News {
             this.author = author
             this.topic = topic
             this.refURL = refURL
+            this.domain = domain
             this.isActive =isActive
 
     }

@@ -12,21 +12,21 @@ import Footer from "./Footer.jsx";
 import convert from "./Fetchserver.js"
 
 import story from "./data/story"
-import news from "./data/news"
+import news from "./data/newsItem.js"
 
 import * as constants from "./Constants.jsx";
 
 export default function App() {
 
-  const urls= [{name:"faircolibri",url:"http://82.165.235.146/fc"},
-  {name:"fcTest", url:"http://85.215.204.50/fc"},
-  {name:"local", url:"http://localhost:8081/fc"}]
+  const urls= [{name:"faircolibri",url:"http://82.165.235.146/faircolibri"},
+  {name:"fcTest", url:"http://85.215.204.50/faircolibri"},
+  {name:"local", url:"http://localhost:8081/faircolibri"}]
 
   const [sidebar,setSidebar] = useState(false);
   const [adminbar,setAdminbar] = useState(false);
   const [admin,setAdmin] = useState(false);
   const [simulator,setSimulator = useState({});
-  const [baseURL,setBaseURL] = useState({name:"local", url:"http://localhost:8081/fc"});
+  const [baseURL,setBaseURL] = useState({name:"local", url:"http://localhost:8081/faircolibri"});
   const [language,setLanguage] = useState(9)
   const [simulatorsList,setSimulatorsList] = useState([]);
   
@@ -176,9 +176,9 @@ const refreshSimulatorsList = async (baseURL,environmentToDelete=0)  => {
 const extractSiteData = (environmentData) => {
 
 
-  console.log("================= ISLANDDATA =============")
+  console.log("================= SITE DATA =============")
   console.dir(siteData)
-  console.log("================= ISLANDDATA =============")
+  console.log("================= SITE DATA =============")
 
 
   const news = [];
