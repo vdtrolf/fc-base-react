@@ -1,6 +1,4 @@
 // External dependencies
-import { WEATHER_SUN, WEATHER_RAIN, WEATHER_SNOW } from "../utils/constants";
-
 
 // Class Implementation
 export default class Device {

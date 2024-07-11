@@ -1,11 +1,5 @@
 import React from "react";
-import WeatherArea from "./WeatherArea.jsx";
 import StateArea from "./StateArea.jsx";
-import Device from "./Device.jsx";
-import Service from "./Service.jsx";
-import Penguin from "./Penguin.jsx";
-import Fish from "./Fish.jsx";
-import Garbage from "./Garbage.jsx";
 import neutral from "./images/TapTapBackNeutral.png";
 
 import * as constants from "./Constants.jsx";
@@ -13,14 +7,13 @@ import * as constants from "./Constants.jsx";
 
 export default function EnvironmentArea(props) {
 
-  const {runningState, environment, onTileClick, showBalloons, illuminatedKey, dempedPenguins, tileSize, gridClass, moveSpeed } = props;
-  const weather = environment.weather;
+  const {cookiesAgreed, language, domain, newsItem} = props;
 
   const debug = false;
   
   if (debug) {
-    console.log("=== Environmentarea " + tileSize  + "==========================");
-    console.dir(environment);
+    console.log("=== SiteArea " + tileSize  + "==========================");
+    console.dir(DOMPointReadOnly);
     console.log("=============================================");
   }
 
